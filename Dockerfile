@@ -9,4 +9,8 @@ COPY static.js /app
 
 RUN npm i && npm install koa koa-static && apk del .build-tools
 
+RUN addgroup --gid 199 -S taiga && adduser -u 199 -S taiga -G taiga
+RUN chown -R taiga:taiga /app
+USER taiga
+
 CMD ["node", "static.js"]
