@@ -3,7 +3,7 @@ MAINTAINER Shulian Systems "contact@shulian.systems"
 
 RUN mkdir /app
 WORKDIR /app
-RUN apk add --no-cache --virtual .build-tools git python2
+RUN apk add --no-cache --virtual .build-tools git python2 build-base
 RUN git clone https://github.com/taigaio/taiga-front-dist.git /app
 COPY static.js /app
 
